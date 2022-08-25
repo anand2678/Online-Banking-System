@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Transactions</title>
+    <link rel="stylesheet" href="https://unpkg.com/bootstrap-material-design@4.1.1/dist/css/bootstrap-material-design.min.css">
+    <link rel="stylesheet" href="listoftransaction.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Sansita+Swashed:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap" rel="stylesheet">
+</head>
+<body>
+    <body>
+       <!-- navbar starts here  -->
+       <img class="i2" src="transaction.png" alt="Transaction Bank_Image" width="450" height="180"  >
+ <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="./index.html">Online Transaction Portal</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="./index.html">Home Page </a>
+                </li>
+              <li class="nav-item  active">
+                  <a class="nav-link" href="./listoftransaction.html" data-toggle="modal" data-target="#sendMoney" style="color: background-color rgb(180, 178, 178);">Send Money</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="https://www.thesparksfoundationsingapore.org/" target="_blank">About
+                        TSF</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <!-- navbar ends here  -->
+    <div class="my-info text-center">
+        
+        <h2 style="color: rgb(244, 0, 122);"> Name: Anand Kumar Sah</h2>
+        <h4 style="color: hotpink;">Net Bank Balance: ₹<span id="myAccountBalance">12,00,000</span></h4> 
+
+        <button class="btn btn-info" data-toggle="modal" data-target="#sendMoney">Send Money</button>
+        <a class="btn btn-info" href="" data-toggle="modal" data-target="#transactionHistory">View All Transactions</a>
+    </div>
+
+    <!-- Modal send money -->
+    <div class="modal fade" id="sendMoney" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Send Money</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form action="">
+                        <div class="input-group mb-3">
+                            <input type="text" id="enterName" class="form-control" placeholder="Recipient's username"
+                                aria-label="Recipient's username" aria-describedby="basic-addon2">
+                            <div class="input-group-append">
+                                <span class="input-group-text" id="basic-addon2"></span>
+                            </div>
+                        </div>
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">INR</span>
+                            </div>
+                            <input type="text" id="enterAmount" class="form-control" placeholder=" Enter Amount"
+                                aria-label="Amount (to the nearest dollar)">
+                            <div class="input-group-append">
+                                <span class="input-group-text">.00</span>
+                            </div>
+                        </div>
+
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" onclick="sendMoney()" class="btn btn-success" data-dismiss="modal">Send
+                        Money</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal transaction History-->
+    <div class="modal fade" id="transactionHistory" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Transaction History</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <ol id="transaction-history-body">
+
+                    </ol>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- table  -->
+    <div class="container">
+        <div class="table-responsive">
+            <table class="table table-hover table-bordered">
+                <thead id="table_topic">
+                    <tr class="table-danger">
+                        <th scope="col">Sl. No.</th>
+                        <th scope="col">Name</th>
+                        <th scope="col">Mobile Number</th>
+                        <th scope="col">Bank Balance(in INR)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="table-light">
+                        <td scope="row">1</td>
+                        <td>Kishan</td>
+                        <td>9350757393</td>
+                        <td>
+                            <p id="kishanaccount Balance">10,000</p>
+                        </td>
+                    </tr>
+                    <tr class="table-light">
+                        <td scope="row">2</td>
+                        <td>Krishna </td>
+                        <td>8354757890</td>
+                        <td>
+                            <p id="Bank Balance">66000</p>
+                        </td>
+                    </tr>
+                    <tr class="table-light">
+                        <td scope="row">3</td>
+                        <td>Rittika paul</td>
+                        <td>6363548907</td>
+                        <td>
+                            <p id="Paul Bank Balance">70000</p>
+                        </td>
+                    </tr>
+                    <tr class="table-light">
+                        <td scope="row">4</td>
+                        <td>Bishal Sah</td>
+                        <td>8800436345</td>
+                        <td>
+                            <p id="Bishal Bank Balance">9000</p>
+                        </td>
+                    </tr>
+                    <tr class="table-light">
+                        <td scope="row">5</td>
+                        <td>Abhishek</td>
+                        <td>9875678907</td>
+                        <td>
+                            <p id="Abhishek Bank Balance">50000</p>
+                        </td>
+                    </tr>
+                   
+                    <tr class="table-light">
+                        <td>7</td>
+                        <td>Naman agrawal</td>
+                        <td>9191765432</td>
+                        <td>
+                            <p id="Naman Bank Balance">4500</p>
+                        </td>
+                    </tr>
+                   
+                    <tr class="table-light">
+                        <td scope="row">9</td>
+                        <td>Namrata yadav</td>
+                        <td>9123567800</td>
+                        <td>
+                            <p id="Namrata Bank Balance">56000</p>
+                        </td>
+                    </tr>
+                   
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <section>
+        <div class="foot">
+          <p>FIND ME ON SOCIAL MEDIA</p>
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+          <i class="social-icon fa fa-facebook-square"aria-hidden></i>
+          <i class="social-icon fa fa-instagram" aria-hidden="true"></i>
+        <i class="social-icon fa fa-twitter" aria-hidden="true"></i>
+          <i class="social-icon fa fa-linkedin" aria-hidden="true"></i>
+          <p>Address-Jain Global Campus,Bengaluru,Karnataka<p>
+          <p>© Copyright 2022 Anand Kumar Sah.</p>
+        </div>
+      </section>
+  
+
+    <script src="CSS_files/js/script.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://unpkg.com/popper.js@1.12.6/dist/umd/popper.js"></script>
+    <script src="https://unpkg.com/bootstrap-material-design@4.1.1/dist/js/bootstrap-material-design.js"></script>
+
+</body>
+</html>

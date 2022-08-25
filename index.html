@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Basic Banking System</title>
+  <!-- Bootstrap CDN -->
+  <link rel="stylesheet"
+    href="https://unpkg.com/bootstrap-material-design@4.1.1/dist/css/bootstrap-material-design.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
+
+  <!-- Fonts -->
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Sansita+Swashed:wght@700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap" rel="stylesheet">
+
+  <!-- AOS  -->
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+</head>
+
+<body style="background-color:papayawhip" onload="loader()">
+
+  <!-- loader for splash screen -->
+  <div id="loading"></div>
+
+  <!-- navbar starts here  -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="index.html">Online Transaction Portal</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto" id="navbar_left">
+        <li class="nav-item active">
+          <a class="nav-link" href="index.html">Home Page<span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="listoftransaction.html">View All Customers</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="https://www.thesparksfoundationsingapore.org/" target="_blank">About TSF</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+  <!-- navbar ends here  -->
+
+  <!-- here content starts here -->
+  <div class="container-fluid hero-content">
+    <div class="row align-items-center">
+      <div class="col-md-6 col-sm-12 text-center" data-aos="fade-up" >
+        
+        <h1  id="Welcome" >Welcome</h1> 
+        <h2> Online Transaction of Bank</h2>
+        <p class="lead muted"></p>"yes to digital payment, no to cash"</p>
+        <br>
+        <br>
+        <a class="get-started" href="listoftransaction.html">Start Now,Let's Go    <img src="images.jfif" width="80" height="65"></a>
+      </div>
+      <div class="col-md-6 col-sm-12 text-center" data-aos="fade-left">
+        <div class="i1-div" >
+          <img class="i1" src="transfer.png.jpg" alt="Bank_Image"  >
+          <h5>Transfering Money to Eachother</h5>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- here content ends here -->
+<br>
+
+    <section>
+      <div class="foot">
+        <p>FIND ME ON SOCIAL MEDIA</p>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <i class="social-icon fa fa-facebook-square"aria-hidden></i>
+        <i class="social-icon fa fa-instagram" aria-hidden="true"></i>
+      <i class="social-icon fa fa-twitter" aria-hidden="true"></i>
+        <i class="social-icon fa fa-linkedin" aria-hidden="true"></i>
+        <p>Address-Jain Global Campus,Bengaluru,Karnataka<p>
+        <p>© Copyright 2022 Anand Kumar Sah.</p>
+      </div>
+    </section>
+
+
+  <!-- spalsh screen js -->
+  <script>
+    var preloader = document.getElementById("loading");
+    function loader() {
+      preloader.style.display = 'none';
+    }
+  </script>
+
+  <script src="script.js"></script>
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+  <script src="https://unpkg.com/popper.js@1.12.6/dist/umd/popper.js"></script>
+  <script src="https://unpkg.com/bootstrap-material-design@4.1.1/dist/js/bootstrap-material-design.js"></script>
+
+  <!-- aos data  -->
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script>
+    AOS.init({
+      duration: 700,
+    });
+  </script>
+
+</body>
+
+</html>
